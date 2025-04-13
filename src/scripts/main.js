@@ -22,7 +22,9 @@ function sortList() {
 function getEmployees() {
   return Array.from(list.children).map((item) => ({
     name: item.textContent.trim(),
+    position: item.dataset.position || '',
     salary: parseSalary(item.dataset.salary),
+    age: Number(item.dataset.age) || null,
   }));
 }
 
